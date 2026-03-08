@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Two Point One Analytics</title>
-  <meta name="description" content="Data analytics consulting — web analytics, data engineering, and business intelligence. Over 18 years experience delivering analytics solutions.">
+  <meta name="description"
+    content="Data analytics consulting — web analytics, data engineering, and business intelligence. Over 18 years experience delivering analytics solutions.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <!-- ═══ HERO ═══════════════════════════════ -->
@@ -62,23 +67,23 @@
   ════════════════════════════════════════════ -->
   <div class="tools">
     <div class="tools__row fade-in">
-      <img src="images/ga.png"       alt="Google Analytics">
-      <img src="images/gtm.png"      alt="Google Tag Manager">
+      <img src="images/ga.png" alt="Google Analytics">
+      <img src="images/gtm.png" alt="Google Tag Manager">
       <img src="images/fivetran.jpg" alt="Fivetran">
-      <img src="images/domo.png"     alt="Domo">
-      <img src="images/tableau.jpg"  alt="Tableau">
+      <img src="images/domo.png" alt="Domo">
+      <img src="images/tableau.jpg" alt="Tableau">
     </div>
   </div>
 
   <!-- ═══ ABOUT ══════════════════════════════ -->
   <section class="about">
     <div class="about__inner fade-in">
-      <img src="images/headshot.jpg" alt="Curtis Robinson" class="about__photo">
-      <div class="about__text">
-        <h2>Curtis Robinson</h2>
+      <div class="about__profile">
+        <img src="images/headshot.jpg" alt="Curtis Robinson" class="about__photo">
+        <h4>Curtis Robinson</h4>
         <p class="role">Founder &amp; Principal Analyst</p>
-        <p>Over 18 years experience delivering analytics solutions and business insights.</p>
       </div>
+      <h4 class="about__statement">Over 20 years experience delivering analytics solutions and business insights.</h4>
     </div>
   </section>
 
@@ -88,21 +93,41 @@
   ════════════════════════════════════════════ -->
   <section class="clients">
     <h2 class="section-title">Clients</h2>
-    <div class="clients__grid fade-in">
-      <img src="images/acronis.png"    alt="Acronis">
-      <img src="images/awwa.png"       alt="AWWA">
-      <img src="images/casio.png"      alt="Casio">
-      <img src="images/gendigital.png" alt="Gen Digital">
-      <img src="images/guatemala.png"  alt="Guatemalan Government">
-      <img src="images/hiya.png"       alt="Hiya Health">
-      <img src="images/jes.png"        alt="JES">
-      <img src="images/norton.png"     alt="Norton LifeLock">
-      <img src="images/ottawa.png"     alt="Ottawa Tourism">
-      <img src="images/ripe.png"       alt="Ripe">
-      <img src="images/skuiq.png"      alt="skuIQ">
-      <img src="images/subrosa.png"    alt="Subrosa Digital">
-      <img src="images/tenable.png"    alt="Tenable">
-      <img src="images/tiki.png"       alt="Tiki Brand">
+    <div class="clients__marquee fade-in">
+      <div class="clients__track">
+        <!-- Original set -->
+        <img src="images/acronis.png" alt="Acronis">
+        <img src="images/awwa.png" alt="AWWA">
+        <img src="images/pretty-litter.png" alt="Pretty Litter">
+        <img src="images/casio.png" alt="Casio">
+        <img src="images/gendigital.png" alt="Gen Digital">
+        <img src="images/guatemala.png" alt="Guatemalan Government">
+        <img src="images/hiya.png" alt="Hiya Health">
+        <img src="images/jes.png" alt="JES">
+        <img src="images/norton.png" alt="Norton LifeLock">
+        <img src="images/ottawa.png" alt="Ottawa Tourism">
+        <img src="images/ripe.png" alt="Ripe">
+        <img src="images/skuiq.png" alt="skuIQ">
+        <img src="images/subrosa.png" alt="Subrosa Digital">
+        <img src="images/tenable.png" alt="Tenable">
+        <img src="images/tiki.png" alt="Tiki Brand">
+        <!-- Duplicate for seamless loop -->
+        <img src="images/acronis.png" alt="Acronis" aria-hidden="true">
+        <img src="images/awwa.png" alt="AWWA" aria-hidden="true">
+        <img src="images/pretty-litter.png" alt="Pretty Litter">
+        <img src="images/casio.png" alt="Casio" aria-hidden="true">
+        <img src="images/gendigital.png" alt="Gen Digital" aria-hidden="true">
+        <img src="images/guatemala.png" alt="Guatemalan Government" aria-hidden="true">
+        <img src="images/hiya.png" alt="Hiya Health" aria-hidden="true">
+        <img src="images/jes.png" alt="JES" aria-hidden="true">
+        <img src="images/norton.png" alt="Norton LifeLock" aria-hidden="true">
+        <img src="images/ottawa.png" alt="Ottawa Tourism" aria-hidden="true">
+        <img src="images/ripe.png" alt="Ripe" aria-hidden="true">
+        <img src="images/skuiq.png" alt="skuIQ" aria-hidden="true">
+        <img src="images/subrosa.png" alt="Subrosa Digital" aria-hidden="true">
+        <img src="images/tenable.png" alt="Tenable" aria-hidden="true">
+        <img src="images/tiki.png" alt="Tiki Brand" aria-hidden="true">
+      </div>
     </div>
   </section>
 
@@ -133,4 +158,5 @@
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
+
 </html>
