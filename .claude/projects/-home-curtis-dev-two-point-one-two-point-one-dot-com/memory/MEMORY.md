@@ -1,35 +1,31 @@
 # Two Point One Analytics — Session Memory
 
 ## Project Status
-- **Phase**: Initial setup / migration from Squarespace
+- **Phase**: Migration complete — live on Cloudflare Pages
 - **Last updated**: 2026-03-08
 
-## Completed
-- Repo initialized with basic HTML and images (via Claude Desktop chat)
-- Wrangler config added for Cloudflare Workers deployment
-- README.md documented with project purpose and structure
-- CLAUDE.md created with design/tool decisions
-- Reviewed original Squarespace site at www.2point1analytics.com
-- Fixed truncated index.html (completed script, closed body/html tags)
-- Extracted CSS to separate `styles.css` file
-- Fixed Cloudflare-obfuscated email → plain mailto link
-- Replaced inline `document.write` year with `textContent` approach
+## Completed (2026-03-08)
+- Migrated from Squarespace to Cloudflare Pages
+- Built static single-page site (index.html + styles.css)
+- Extracted CSS to separate file for maintainability
+- Swapped font from Playfair Display → Hanken Grotesk
+- Redesigned hero/footer with white overlays (light aesthetic)
+- Circular headshot with name/title below, large statement text to right
+- Client logos in infinite scrolling marquee
+- Removed contact info (no email, no form — business card site only)
+- Auto-deploy via Cloudflare Pages GitHub integration
+- DNS pointed to Cloudflare Pages (custom domain live)
 
-## Known Issues
-- Email in footer (`curtis@2point1analytics.com`) may need correction — was obfuscated in original
-- No favicon
-- No Open Graph / social meta tags
-
-## Pending / Next Steps
-- Confirm correct contact email address
-- Match original Squarespace site design more closely
+## Future Work
+- Update tool logos (currently: GA, GTM, Fivetran, Domo, Tableau)
+- Update services offered
+- Refine layout / design tweaks
 - Add favicon
-- Add Open Graph meta tags
-- Test Cloudflare Workers deployment (`wrangler dev`)
-- Set up custom domain DNS
+- Add Open Graph / social meta tags
 
 ## Design Decisions
-- Static HTML/CSS/JS only — no framework overhead for a single page
-- Cloudflare Workers for hosting (fast, free tier, edge deployment)
-- Separate `styles.css` for maintainability (multiple design changes planned)
-- Email link only — no contact form needed
+- Static HTML/CSS/JS only — no framework
+- Cloudflare Pages for hosting (auto-deploy on push to main)
+- Hanken Grotesk (Google Fonts) for both display and body text
+- No contact info — site is a business card for existing contacts
+- Separate `styles.css` for maintainability

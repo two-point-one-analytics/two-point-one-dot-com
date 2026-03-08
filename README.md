@@ -4,7 +4,7 @@ Static single-page website for **Two Point One Analytics**, a consulting busines
 
 ## Purpose
 
-Marketing site for an analytics consulting practice. Migrating from Squarespace to a self-hosted static site on Cloudflare Workers.
+Business card site for an analytics consulting practice. Not intended for lead generation — serves as a reference for existing contacts.
 
 ## Business Overview
 
@@ -20,13 +20,21 @@ Marketing site for an analytics consulting practice. Migrating from Squarespace 
 ## Tech Stack
 
 - Pure HTML/CSS/JS (no framework)
-- Hosted via Cloudflare Workers (`wrangler.toml`)
+- Hanken Grotesk font (Google Fonts)
+- Hosted on Cloudflare Pages (auto-deploys on push to main)
 - Domain: www.2point1analytics.com
 
 ## Project Structure
 
 ```
 index.html          — Single-page site
+styles.css          — All styling
 images/             — Logo, hero, headshot, client logos, tool logos, footer bg
-wrangler.toml       — Cloudflare Workers config
+wrangler.toml       — Cloudflare config
+```
+
+## Local Development
+
+```
+wrangler dev
 ```

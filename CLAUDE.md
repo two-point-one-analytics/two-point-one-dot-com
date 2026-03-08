@@ -3,19 +3,18 @@
 ## Architecture
 - Static single-page site (HTML/CSS/JS) — no build step, no framework
 - Deployed via Cloudflare Workers (static assets mode)
-- Domain: www.2point1analytics.com (migrating from Squarespace)
+- Domain: www.2point1analytics.com
 
 ## Design
 - Clean, minimalist, professional aesthetic
 - Color palette: black text, white backgrounds, subtle grays
-- Sans-serif typography (system fonts)
+- Sans-serif typography
 - Sections: Hero → Services → Tools → About → Clients → Footer
 - Fade-in animations via IntersectionObserver
 - Mobile-responsive grid layout
 
 ## Fonts
-- Display: Playfair Display (Google Fonts)
-- Body: DM Sans (Google Fonts)
+- Display + Body: Hanken Grotesk (Google Fonts)
 
 ## Conventions
 - All images in `images/` directory
@@ -24,9 +23,8 @@
 - Google Fonts is the only external dependency
 
 ## Hosting
-- Cloudflare Workers with `wrangler.toml`
+- Cloudflare Pages with GitHub integration (auto-deploy on push to main)
 - `wrangler dev` for local development
-- `wrangler deploy` to publish
 
 ## Notes
 - No contact info — site is a "business card", not lead gen
