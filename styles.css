@@ -5,8 +5,8 @@
   --color-accent: #2a2a2a;
   --color-surface: #f7f7f5;
   --color-border: #e2e0dc;
-  --color-hero-overlay: rgba(15, 15, 15, 0.72);
-  --font-display: 'Playfair Display', Georgia, serif;
+  --color-hero-overlay: rgba(255, 255, 255, 0.85);
+  --font-display: 'Hanken Grotesk', -apple-system, sans-serif;
   --font-body: 'DM Sans', -apple-system, sans-serif;
   --max-width: 1100px;
 }
@@ -55,17 +55,17 @@ body {
 }
 
 .hero__logo {
-  width: 320px;
+  width: 500px;
   max-width: 80vw;
   margin-bottom: 2rem;
-  filter: invert(1) brightness(2);
+  filter: none;
 }
 
 .hero__tagline {
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 3.5vw, 2.2rem);
   font-weight: 400;
-  color: #fff;
+  color: var(--color-text);
   letter-spacing: -0.01em;
   opacity: 0.92;
 }
@@ -254,7 +254,7 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(10, 10, 10, 0.78);
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .footer__content {
@@ -264,7 +264,7 @@ section {
 
 .footer__copy {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-muted);
 }
 
 /* ── ANIMATIONS ───────────────────────────── */
