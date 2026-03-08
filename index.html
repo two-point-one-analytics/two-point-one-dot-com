@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Point One Analytics</title>
+  <meta name="description" content="Data analytics consulting — web analytics, data engineering, and business intelligence. Over 18 years experience delivering analytics solutions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #ffffff;
+      --color-text: #1a1a1a;
+      --color-text-muted: #555;
+      --color-accent: #2a2a2a;
+      --color-surface: #f7f7f5;
+      --color-border: #e2e0dc;
+      --color-hero-overlay: rgba(15, 15, 15, 0.72);
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+      --max-width: 1100px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/hero.jpg') center/cover no-repeat;
+    }
+
+    .hero__bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--color-hero-overlay);
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+      animation: fadeUp 1s ease-out;
+    }
+
+    .hero__logo {
+      width: 320px;
+      max-width: 80vw;
+      margin-bottom: 2rem;
+      filter: invert(1) brightness(2);
+    }
+
+    .hero__tagline {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      font-weight: 400;
+      color: #fff;
+      letter-spacing: -0.01em;
+      opacity: 0.92;
+    }
+
+    /* ── SECTIONS ────────────────────────────── */
+    section {
+      padding: 5rem 2rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 3rem;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── SERVICES ─────────────────────────────── */
+    .services {
+      background: var(--color-surface);
+    }
+
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 2.5rem 2rem;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.01em;
+    }
+
+    .service-card ul {
+      list-style: none;
+    }
+
+    .service-card li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+
+    .service-card li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 5px;
+      height: 5px;
+      background: var(--color-border);
+      border-radius: 50%;
+    }
+
+    /* ── TOOL LOGOS ───────────────────────────── */
+    /*
+      TO UPDATE TOOLS: Add/remove <img> tags inside .tools__row.
+      Keep images roughly the same dimensions for visual balance.
+    */
+    .tools {
+      padding: 3rem 2rem;
+    }
+
+    .tools__row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .tools__row img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.55;
+      transition: filter 0.3s, opacity 0.3s;
+    }
+
+    .tools__row img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    /* ── ABOUT ────────────────────────────────── */
+    .about {
+      background: var(--color-surface);
+    }
+
+    .about__inner {
+      display: flex;
+      align-items: center;
+      gap: 3.5rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .about__photo {
+      width: 260px;
+      min-width: 200px;
+      border-radius: 6px;
+      object-fit: cover;
+      aspect-ratio: 3/4;
+    }
+
+    .about__text h2 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .about__text .role {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .about__text p {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── CLIENT LOGOS ─────────────────────────── */
+    /*
+      TO UPDATE CLIENTS: Add/remove <img> tags inside .clients__grid.
+      Logos are auto-sized. Use transparent PNGs for best results.
+    */
+    .clients__grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem 3rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .clients__grid img {
+      height: 40px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.5;
+      transition: filter 0.3s, opacity 0.3s;
+    }
+
+    .clients__grid img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    /* ── FOOTER ───────────────────────────────── */
+    .footer {
+      position: relative;
+      text-align: center;
+      padding: 5rem 2rem;
+      overflow: hidden;
+    }
+
+    .footer__bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/footer.jpeg') center/cover no-repeat;
+    }
+
+    .footer__bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.78);
+    }
+
+    .footer__content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .footer a {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.1rem;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    .footer a:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer__copy {
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* ── ANIMATIONS ───────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ───────────────────────────── */
+    @media (max-width: 768px) {
+      section { padding: 3.5rem 1.5rem; }
+
+      .about__inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about__photo {
+        width: 200px;
+      }
+
+      .tools__row img {
+        height: 36px;
+      }
+
+      .clients__grid img {
+        height: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HERO ═══════════════════════════════ -->
+  <header class="hero">
+    <div class="hero__bg" role="img" aria-label="Analytics data visualization"></div>
+    <div class="hero__content">
+      <img src="images/logo.png" alt="Two Point One Analytics" class="hero__logo">
+      <p class="hero__tagline">Bringing clarity to your online business</p>
+    </div>
+  </header>
+
+  <!-- ═══ SERVICES ═══════════════════════════ -->
+  <section class="services">
+    <h2 class="section-title">Services</h2>
+    <div class="services__grid">
+
+      <div class="service-card fade-in">
+        <h3>Analytics Implementation</h3>
+        <ul>
+          <li>Web analytics deployment</li>
+          <li>Marketing tag management</li>
+          <li>Data warehouse setup</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-in">
+        <h3>Report Creation</h3>
+        <ul>
+          <li>Site activity and attribution reports</li>
+          <li>Ecommerce performance dashboards</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-in">
+        <h3>Data Analysis</h3>
+        <ul>
+          <li>User behavior trends</li>
+          <li>Marketing ROAS</li>
+          <li>Customer churn and lifetime value</li>
+          <li>Optimization test design and analysis</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ TOOL LOGOS ═════════════════════════
+       To add/remove tools: just add/remove <img> tags below.
+       Recommended image height: ~100-200px source, displayed at 48px.
+  ════════════════════════════════════════════ -->
+  <div class="tools">
+    <div class="tools__row fade-in">
+      <img src="images/ga.png"       alt="Google Analytics">
+      <img src="images/gtm.png"      alt="Google Tag Manager">
+      <img src="images/fivetran.jpg" alt="Fivetran">
+      <img src="images/domo.png"     alt="Domo">
+      <img src="images/tableau.jpg"  alt="Tableau">
+    </div>
+  </div>
+
+  <!-- ═══ ABOUT ══════════════════════════════ -->
+  <section class="about">
+    <div class="about__inner fade-in">
+      <img src="images/headshot.jpg" alt="Curtis Robinson" class="about__photo">
+      <div class="about__text">
+        <h2>Curtis Robinson</h2>
+        <p class="role">Founder &amp; Principal Analyst</p>
+        <p>Over 18 years experience delivering analytics solutions and business insights.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CLIENTS ════════════════════════════
+       To add/remove clients: just add/remove <img> tags below.
+       Use transparent PNGs, roughly 200-400px wide source.
+  ════════════════════════════════════════════ -->
+  <section class="clients">
+    <h2 class="section-title">Clients</h2>
+    <div class="clients__grid fade-in">
+      <img src="images/acronis.png"    alt="Acronis">
+      <img src="images/awwa.png"       alt="AWWA">
+      <img src="images/casio.png"      alt="Casio">
+      <img src="images/gendigital.png" alt="Gen Digital">
+      <img src="images/guatemala.png"  alt="Guatemalan Government">
+      <img src="images/hiya.png"       alt="Hiya Health">
+      <img src="images/jes.png"        alt="JES">
+      <img src="images/norton.png"     alt="Norton LifeLock">
+      <img src="images/ottawa.png"     alt="Ottawa Tourism">
+      <img src="images/ripe.png"       alt="Ripe">
+      <img src="images/skuiq.png"      alt="skuIQ">
+      <img src="images/subrosa.png"    alt="Subrosa Digital">
+      <img src="images/tenable.png"    alt="Tenable">
+      <img src="images/tiki.png"       alt="Tiki Brand">
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__bg"></div>
+    <div class="footer__content">
+      <h2>Get in Touch</h2>
+      <a href="/cdn-cgi/l/email-protection#d5b6a0a7a1bca695e7a5babcbba1e4b4bbb4b9aca1bcb6a6fbb6bab8"><span class="__cf_email__" data-cfemail="b2d1c7c0c6dbc1f280c2dddbdcc683d3dcd3decbc6dbd1c19cd1dddf">[email&#160;protected]</span></a>
+      <p class="footer__copy">&copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script> Two Point One Analytics</p>
+    </div>
+  </footer>
+
+  <!-- Scroll fade-in observer -->
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+    
